@@ -2,60 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-<!-- !!!!! -->
-<!--    change this to refer to your specific page  -->
     <title>Soley's Work Index</title>
 
-<!-- !!!!! -->
-<!--  change this to your preferred icon  -->
-    <!-- favicon was sourced from favicon.io but the original graphics are copyright 2020 Twitter, Inc
-    and other contributors -->
-    <!-- They are licensed under CC-BY 4.0 as linked below -->
-    <!-- https://creativecommons.org/licenses/by/4.0/ -->
     <link rel="icon" type="image/png" href="./assets/icons/favicon.png">
 
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+
+    <script>
+        if (sessionStorage.getItem("seen")) document.documentElement.classList.add("revisit");
+        sessionStorage.setItem("seen", "1");
+    </script>
 </head>
 <body>
 
     <header>
-<!-- !!!!! -->
-<!--    change this to your preferred online name  -->
+        <p class="kicker">Work Index &middot; RMIT &middot; 2026</p>
         <h1>Soley's Interface Design and Development Work</h1>
     </header>
 
-    <div class="mainNavContainer">
+    <!-- Dock -->
+    <nav aria-label="Site">
+        <a href="./index.html" aria-current="page">Index</a>
+        <a href="./assignment1.html">Assignment 1</a>
+        <a href="./assignment2.html">Assignment 2</a>
+        <a href="./communityofpractice.html">Community of Practice</a>
+    </nav>
 
-        <nav>
-            <a href="./assignment1.html">Assignment 1</a>
-            <a href="./assignment2.html">Assignment 2</a>
-        </nav>
-
-        <main>
-            <section id="intro-section">
-                <h3>Design Scenario</h3>
-            </section>
-        </main>
-
-        <!-- this is an empty element which helps with spacing -->
-        <aside></aside>
-
-    </div>
+    <main>
+        <section id="design-scenario">
+            <h2>Design Scenario</h2>
+            <p>A short brief describing who this site is for and what it needs to do will live here. For now it is a placeholder while the semester gets underway.</p>
+        </section>
+    </main>
 
     <footer>
         <p>
-<!-- !!!!! -->
-<!--    change this to your preferred online name and update link to refer to your github page  -->
             Page maintained by:
-            <a href="https://github.com/SoleyatRmit" target="_blank">
-            Soley Chhour
-            </a>
+            <a href="https://github.com/SoleyatRmit" target="_blank" rel="noopener">Soley Chhour</a>
         </p>
     </footer>
+
 </body>
 </html>
