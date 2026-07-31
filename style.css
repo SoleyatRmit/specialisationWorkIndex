@@ -165,6 +165,31 @@ pre {
     overflow-x: auto;
 }
 
+/* weekly log */
+
+.weeks div {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    column-gap: 1.5rem;
+    padding-block: 0.875rem;
+    border-block-start: 1px solid var(--hairline);
+}
+
+.weeks dt {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    line-height: 2;
+}
+
+.weeks dd {
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    color: var(--text-soft);
+}
+
 /* links */
 
 a { color: var(--accent); text-decoration: none; }
