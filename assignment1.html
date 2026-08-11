@@ -33,8 +33,69 @@
 
     <main>
         <section id="assignment-1">
-            <h2>Assignment 1</h2>
-            <p>Work for Assignment 1 will be published here once it is ready.</p>
+            <h2>System Design Document: Dilation</h2>
+
+            <h3>Design scenario analysis and response</h3>
+
+            <p>I thought about a lot of different ways you can relate to time without it being a clock or a timer. If I just made a timer or a countdown it would be too basic. The website would be plain, an ordinary timer rather than an instrument.</p>
+
+            <p>That's why I picked the Sonic Timer. It leaves the most room to do something other than count down. Dynamic Soundtracker was a close second, but after going back and forth I decided to pick one and commit.</p>
+
+            <p>Normal timers count down. They start with a number and it gets smaller and smaller until it reaches zero. For everyday things that's fine, and honestly it's perfect. But people who don't need precision and just want something calm, for example meditating, resting, or lying down for a few minutes, will most likely check how much time is left before it ends, and that can ruin their mood. Say someone has a twenty-minute break and wants to lie down and rest. They'll constantly be waking up, raising their head, and checking how much time is left.</p>
+
+            <p>Audio doesn't have that problem. A sound that changes smoothly can tell you where you are in that period of time without needing your eyes. You can get that information with your eyes closed, or while carrying on with whatever you were doing, without having to turn and face the screen. It doesn't cost you any attention.</p>
+
+            <p>The brief also says instrument. If my project was just a timer it wouldn't be an instrument, it would be a product. An instrument needs the user's input and choices. So I designed this system to take that input and let the user decide what their time sounds like, not just how long it lasts.</p>
+
+            <h4>Purpose</h4>
+
+            <p>Let the user set aside a period of time without having to look at it, and let them decide what that time sounds like before it starts.</p>
+
+            <h4>Worth</h4>
+
+            <ul>
+                <li>Let users keep their attention instead of spending it on the screen</li>
+                <li>Let time be felt as something closer to art, elegant rather than a number going down</li>
+                <li>Let the ending come slowly instead of abruptly</li>
+                <li>Make each session belong to the person who built it, rather than a preset everyone else gets</li>
+            </ul>
+
+            <h3>Project Overview</h3>
+
+            <h4>Synopsis</h4>
+
+            <p>Dilation is a browser instrument for building a stretch of time and letting it run without distracting you. You make a soundscape, set how long it runs, then stop looking at the screen. The sound carries you and tells you roughly where you are without showing you a single number.</p>
+
+            <p>I picked the name Dilation because I love physics. In Einstein's theory of relativity there's a thing called time dilation, and to sum it up, it means time doesn't move the same for everyone. How fast or slow time moves depends on how fast you're moving and how much gravity you're sitting in. So two people can measure the same stretch and get different amounts of time. Measured time isn't fixed. It's relative, and it depends on where you're measuring from.</p>
+
+            <p>That concept gave me a lot of the thinking behind this project. Two people can both set a one minute session and end up experiencing something completely different.</p>
+
+            <p>There are two screens. The first is the instrument, where you give your input. You pick how long the session runs, the voice, and the tuning. Basically, how it will sound.</p>
+
+            <p>The second is the session screen. It shows a slow animation that carries no information about progress. It doesn't count down or up, it doesn't fill, and it isn't a progress bar. It's there to be nice to look at and useless to read, so attention has nowhere to go except the sound.</p>
+
+            <p>The sound moves through three phases. It starts sparse and low while you settle. The middle feels fuller and warmer. Then it thins out toward the end, so you feel it closing before it closes. There's no alarm. The sound just fades to nothing.</p>
+
+            <h4>How it answers the purpose and worth</h4>
+
+            <p>The information a normal clock shows you visually is moved into sound, through phase and pitch. The visual side is emptied out, so no information comes from it at all. The input screen also offers a lot of choices instead of presets, so you build your own session rather than picking one, and it ends up unique to you. That's the purpose.</p>
+
+            <p>For worth, the user keeps all of their attention, because the interface is built to get less interesting over time instead of more. Time gets shaped into sound. And the ending arrives slowly instead of abruptly interrupting them.</p>
+
+            <h3>Project Framing</h3>
+
+            <p><strong>Concepts.</strong> In: time as sound instead of numbers, and composing before you get the final product. Out: productivity framing, so no scores, no stats, no history, no gamification, and no tracking.</p>
+
+            <p><strong>Characterisation.</strong> Calm, smooth and plain. An instrument, not a wellness app. The visuals are there but they're deliberately uninformative, so they don't compete with the sound.</p>
+
+            <p><strong>Technologies.</strong> In: Tone.js for the sound, the Temporal JavaScript object as the extended technique running the session clock, and HTML and CSS. All sound is generated rather than sampled, so nothing cuts off or loops.</p>
+
+            <p>Out: note by note keyboard playing, since that would pull the user into constant input during the session. Touch and mobile, since this is only built for desktop. Also out: MIDI, recording and export, accounts, and notifications.</p>
+
+            <h3>Interaction Design Analysis</h3>
+
+            <p>Work in progress</p>
+
         </section>
     </main>
 
