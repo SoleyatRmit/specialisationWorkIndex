@@ -320,3 +320,21 @@ nav a[aria-current="page"] {
         animation: content-in 300ms cubic-bezier(0.25, 0.1, 0.25, 1) both;
     }
 }
+
+/* Screenshots and captions */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+figure {
+    margin: 2rem 0;
+}
+
+figcaption {
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    opacity: 0.75;
+}

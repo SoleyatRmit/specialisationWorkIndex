@@ -66,7 +66,7 @@
 
             <p>Dilation is a browser instrument for building a stretch of time and letting it run without distracting you. You make a soundscape, set how long it runs, then stop looking at the screen. The sound carries you and tells you roughly where you are without showing you a single number.</p>
 
-            <p>I picked the name Dilation because I love physics. In Einstein's theory of relativity there's a thing called time dilation, and to sum it up, it means time doesn't move the same for everyone. How fast or slow time moves depends on how fast you're moving and how much gravity you're sitting in. So two people can measure the same stretch and get different amounts of time. Measured time isn't fixed. It's relative, and it depends on where you're measuring from.</p>
+            <p>I picked the name Dilation because I love physics. In Einstein's theory of relativity there's a thing called time dilation, and to sum it up, it means time doesn't move the same for everyone. How fast or slow time moves depends on how fast you're moving and how much gravity you're sitting in (Encyclopaedia Britannica 2026). So two people can measure the same stretch and get different amounts of time. Measured time isn't fixed. It's relative, and it depends on where you're measuring from.</p>
 
             <p>That concept gave me a lot of the thinking behind this project. Two people can both set a one minute session and end up experiencing something completely different.</p>
 
@@ -94,7 +94,79 @@
 
             <h3>Interaction Design Analysis</h3>
 
-            <p>Work in progress</p>
+            <h4>Noisli: characterisation</h4>
+
+            <figure>
+                <img src="./assets/images/noisli.png" alt="The Noisli home page. A saturated green background with the heading &quot;Your digital place for calm and focus&quot;, a Sign Up for Free button, and a Sign Up button in the top right corner.">
+                <figcaption>Screenshot of Noisli, <a href="https://www.noisli.com/" target="_blank" rel="noopener">noisli.com</a>, accessed 12 August 2026.</figcaption>
+            </figure>
+
+            <p>Noisli mixes ambient sounds like rain, ocean and white noise, and it also has a session timer. It's the closest existing tool to what I'm making.</p>
+
+            <p>The landing page is entirely saturated green and the copy talks about focus and productivity. For a tool meant to calm you down, the presentation is loud and pitched at work rather than rest. There's a signup button in the top corner and another in the middle of the page, and while you can try it without an account, registering is clearly what the page wants from you first.</p>
+
+            <p>This affected two decisions in my project. Dilation stays away from productivity framing entirely, because I don't want the tool to feel like it's helping you get more done. And there are no accounts, so nothing is asked of the user before they start. The visual character follows from that: plain and quiet rather than bright, so the interface matches what it's asking you to do.</p>
+
+            <h4>Endel: information design</h4>
+
+            <figure>
+                <img src="./assets/images/endel-nav.png" alt="The Endel site scrolled part way down. The fixed top navigation has no background, so the words ADHD, Sleep, Focus, Relax and Activity overlap the heading &quot;Endel Mobile app&quot; underneath and both become hard to read.">
+                <figcaption>Screenshot of Endel, <a href="https://endel.io/" target="_blank" rel="noopener">endel.io</a>, accessed 12 August 2026.</figcaption>
+            </figure>
+
+            <p>Endel makes generative soundscapes for focus, sleep and relaxation.</p>
+
+            <p>The problem is the top navigation. It has no background behind it, so the nav text sits directly on whatever is underneath. When you scroll, it overlaps the page text and the two mix together, which makes it harder to read. The nav is also the same font and roughly the same size as the rest of the text on the page, so nothing separates it from the content it's sitting on top of.</p>
+
+            <p>This mattered for my project because my session screen has the same setup. There's a control sitting on top of a moving animation. If I don't give that control its own surface, it will end up as hard to read as Endel's nav. So the end button needs a background of its own, and the animation needs to stay dark and low contrast underneath it.</p>
+
+            <h4>The Wall Street Journal: purpose</h4>
+
+            <figure>
+                <img src="./assets/images/wsj-home.png" alt="The Wall Street Journal home page. A subscribe banner is fixed across the bottom of the screen and a $24.99 a week button sits in the top right corner, above a dense grid of headlines and a live stock ticker.">
+                <figcaption>Screenshot of The Wall Street Journal, <a href="https://www.wsj.com/" target="_blank" rel="noopener">wsj.com</a>, accessed 12 August 2026.</figcaption>
+            </figure>
+
+            <p>The Wall Street Journal's purpose is to get you to subscribe. As soon as you land on the site there's a banner at the bottom asking you to subscribe, and a smaller button in the top right that says $24.99 a week. That's two prompts before you've read anything.</p>
+
+            <figure>
+                <img src="./assets/images/wsj-scrolled.png" alt="The same site scrolled further down. A third subscribe promotion sits in the middle of the page between the articles, while the bottom banner and top right button are both still on screen.">
+                <figcaption>Screenshot of The Wall Street Journal, <a href="https://www.wsj.com/" target="_blank" rel="noopener">wsj.com</a>, accessed 12 August 2026.</figcaption>
+            </figure>
+
+            <p>Both stay on screen while you scroll, and as you go further down there's another full subscribe banner sitting in the middle of the page, between the articles.</p>
+
+            <p>The Wall Street Journal is built to grab your attention and point you toward the subscribe button. My website is built to do the opposite. It releases attention instead of holding onto it, so the user keeps all of theirs.</p>
+
+            <h4>Ableton Learning Synths: feedback</h4>
+
+            <figure>
+                <img src="./assets/images/learning-synths-idle.png" alt="Learning Synths before any input. An empty white box with a dark blue outline and a small circle in the centre, under an instruction to drag in the box to play.">
+                <figcaption>Screenshot of Learning Synths by Ableton, <a href="https://learningsynths.ableton.com/" target="_blank" rel="noopener">learningsynths.ableton.com</a>, accessed 12 August 2026.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="./assets/images/learning-synths-dragging.png" alt="The same box while being dragged. It has filled with bright red and warped so that its corners tilt toward the cursor, which now sits in the top right.">
+                <figcaption>Screenshot of Learning Synths by Ableton, <a href="https://learningsynths.ableton.com/" target="_blank" rel="noopener">learningsynths.ableton.com</a>, accessed 12 August 2026.</figcaption>
+            </figure>
+
+            <p>Learning Synths is a browser synthesiser made by Ableton for teaching how synthesis works. The main part is a box you drag inside to play it.</p>
+
+            <p>When you drag, the box fills with red, the shape tilts toward your mouse, and the sound changes as you move. Three things respond to one input, so there's no doubt the instrument heard you. It did give me a jump scare though. There's a warning above the box telling you to use headphones, but nothing tells you how loud it will be and there's no way to set the volume first.</p>
+
+            <p>So my setup screen needs to respond the same way, where changing the voice or tuning is heard straight away. And the first sound of a session has to fade in rather than arrive at full volume.</p>
+
+            <h3>References</h3>
+
+            <p>Encyclopaedia Britannica 2026, <cite>Time dilation</cite>, Encyclopaedia Britannica, viewed 12 August 2026, &lt;<a href="https://www.britannica.com/science/time-dilation" target="_blank" rel="noopener">https://www.britannica.com/science/time-dilation</a>&gt;.</p>
+
+            <p>Noisli n.d., <cite>Noisli</cite>, viewed 12 August 2026, &lt;<a href="https://www.noisli.com/" target="_blank" rel="noopener">https://www.noisli.com/</a>&gt;.</p>
+
+            <p>Endel n.d., <cite>Endel</cite>, viewed 12 August 2026, &lt;<a href="https://endel.io/" target="_blank" rel="noopener">https://endel.io/</a>&gt;.</p>
+
+            <p>The Wall Street Journal 2026, <cite>The Wall Street Journal</cite>, Dow Jones &amp; Company, viewed 12 August 2026, &lt;<a href="https://www.wsj.com/" target="_blank" rel="noopener">https://www.wsj.com/</a>&gt;.</p>
+
+            <p>Ableton n.d., <cite>Learning Synths</cite>, viewed 12 August 2026, &lt;<a href="https://learningsynths.ableton.com/" target="_blank" rel="noopener">https://learningsynths.ableton.com/</a>&gt;.</p>
 
         </section>
     </main>
