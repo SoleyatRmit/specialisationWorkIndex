@@ -33,8 +33,206 @@
 
     <main>
         <section id="assignment-2">
-            <h2>Assignment 2</h2>
-            <p>Work for Assignment 2 will be published here once it is ready.</p>
+            <h2>Parallel Prototypes: Dilation</h2>
+
+            <p>Dilation is an instrument that works differently from a traditional timer. It focuses entirely on relaxation, not on watching the timer. During a session there are no numbers, so you don't know how many minutes or seconds are left, and that's on purpose. The full concept is on my <a href="./assignment1.html">Assignment 1</a> page.</p>
+
+            <section id="layout">
+                <h3>Layout</h3>
+
+                <p>Layout covers the setup screen, where you choose everything before a session starts. I want feedback on which layout gives the better experience, and which one is easiest to navigate.</p>
+
+                <h4><a href="https://dilationlayoutone.github.io/DilationLayoutOne/" target="_blank" rel="noopener">Prototype 1: Stacked</a></h4>
+                <p>A stacked layout, with everything on one screen. The settings are grouped into Time and Sound, and it all fits on a laptop screen without scrolling. It suits Dilation because it's simple. Everything is grouped and easy to understand, and you see every setting as soon as you open the page.</p>
+                <details class="log">
+                    <summary>Commit log (11 commits)</summary>
+                    <table>
+                        <caption>Commit log, LayoutOne branch</caption>
+                        <thead>
+                            <tr><th scope="col">Author</th><th scope="col">Date</th><th scope="col">Subject</th><th scope="col">Body</th></tr>
+                        </thead>
+                        <tbody>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 17:15:04 2026 +0700</td><td>Update style.css</td><td>Tightened the spacing so everything fits on a 720px high screen without needing to scroll. Claude helped with this.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 17:08:30 2026 +0700</td><td>Group the set up page by Time and Sound</td><td>Basic HTML and CSS changes to group the set up settings by Time and Sound.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:33:13 2026 +0700</td><td>Arrows spacing</td><td>Spaced out the up and down arrows so it fits with the rest of the website.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:29:13 2026 +0700</td><td>Update the style of the up and down arrow keys</td><td>Claude helped with the background line.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:15:10 2026 +0700</td><td>Added a favicon</td><td>Claude helped with this but I came up with the wave design.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:09:36 2026 +0700</td><td>Added Esc function to end the session</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:06:04 2026 +0700</td><td>Pitch lift at the end of session</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:59:04 2026 +0700</td><td>Update style.css</td><td>Added hover animations on the set up page.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:49:43 2026 +0700</td><td>Fixed volume slider</td><td>Fix the slider and made it longer.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:35:04 2026 +0700</td><td>Added a volume slider</td><td>Volume slider at the bottom of the set up page</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 14:12:59 2026 +0700</td><td>Uploaded Prototype</td><td></td></tr>
+                        </tbody>
+                    </table>
+                    <p class="log-download"><a href="./assets/logs/LayoutOne.csv" download>Download this log as a CSV</a></p>
+                </details>
+
+                <h4><a href="https://dilationlayouttwo.github.io/DilationLayoutTwo/" target="_blank" rel="noopener">Prototype 2: One at a time</a></h4>
+                <p>One setting at a time, similar to an onboarding flow where you answer one question before moving on to the next. You can only begin once you've gone through every step, so you can't skip anything while setting up your session.</p>
+                <details class="log">
+                    <summary>Commit log (16 commits)</summary>
+                    <table>
+                        <caption>Commit log, LayoutTwo branch</caption>
+                        <thead>
+                            <tr><th scope="col">Author</th><th scope="col">Date</th><th scope="col">Subject</th><th scope="col">Body</th></tr>
+                        </thead>
+                        <tbody>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 18:29:28 2026 +0700</td><td>Update index.html</td><td>Fixed a bug where pressing Enter would skipped all the other pages and starts the session. Claude found this bug and fixed it too.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 18:25:14 2026 +0700</td><td>Update style.css</td><td>Added fade animation to the steps too</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 18:20:57 2026 +0700</td><td>Page counter</td><td>Added page counter to see what page you&#x27;re on and how many are left.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 18:13:53 2026 +0700</td><td>Update style.css</td><td>Style the next and back buttons. Make it match with the rest of the website.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 17:51:33 2026 +0700</td><td>Update index.html</td><td>Move Begin button to the last step</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 17:49:26 2026 +0700</td><td>Show one setting at a time part 2</td><td>Continuing the coding and added next and back buttons.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 17:29:39 2026 +0700</td><td>Show one setting at a time</td><td>Make CSS show the settings in the address bar and if nothing is there then start at length (first step).</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:33:13 2026 +0700</td><td>Arrows spacing</td><td>Spaced out the up and down arrows so it fits with the rest of the website.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:29:13 2026 +0700</td><td>Update the style of the up and down arrow keys</td><td>Claude helped with the background line.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:15:10 2026 +0700</td><td>Added a favicon</td><td>Claude helped with this but I came up with the wave design.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:09:36 2026 +0700</td><td>Added Esc function to end the session</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:06:04 2026 +0700</td><td>Pitch lift at the end of session</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:59:04 2026 +0700</td><td>Update style.css</td><td>Added hover animations on the set up page.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:49:43 2026 +0700</td><td>Fixed volume slider</td><td>Fix the slider and made it longer.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:35:04 2026 +0700</td><td>Added a volume slider</td><td>Volume slider at the bottom of the set up page</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 14:12:59 2026 +0700</td><td>Uploaded Prototype</td><td></td></tr>
+                        </tbody>
+                    </table>
+                    <p class="log-download"><a href="./assets/logs/LayoutTwo.csv" download>Download this log as a CSV</a></p>
+                </details>
+
+                <h4><a href="https://dilationlayoutthree.github.io/DilationLayoutThree/" target="_blank" rel="noopener">Prototype 3: Pad</a></h4>
+                <p>The idea came from Ableton's <a href="https://learningsynths.ableton.com/" target="_blank" rel="noopener">Learning Synths</a> (Ableton n.d.), which we were shown in class. It has a pad that uses spatial input to change the sound. Here, left to right sets the pitch, and up and down sets the brightness. The pad also gives you a preview: while you drag, you hear what the session is going to sound like before you begin. That's the purpose from my Assignment 1, deciding what the time sounds like before it starts. It also explores spatial input, another of the extended techniques.</p>
+                <details class="log">
+                    <summary>Commit log (15 commits)</summary>
+                    <table>
+                        <caption>Commit log, LayoutThree branch</caption>
+                        <thead>
+                            <tr><th scope="col">Author</th><th scope="col">Date</th><th scope="col">Subject</th><th scope="col">Body</th></tr>
+                        </thead>
+                        <tbody>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 20:41:33 2026 +0700</td><td>Added arrow keys support for the pad</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 20:17:02 2026 +0700</td><td>Labelled the pad</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 19:51:30 2026 +0700</td><td>Update main.js</td><td>Added feature where you can hear the preview while dragging on the pad. Claude helped a lot with this part.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 19:22:56 2026 +0700</td><td>Update main.js</td><td>Added brightness to the pad, so y level for brightness and x level for pitch.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 19:03:18 2026 +0700</td><td>Making the Pad functional</td><td>Making it draggable and continuing with the coding. Claude helped a lot with this.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 18:51:27 2026 +0700</td><td>Replaced tuning with a pad</td><td>Added a pad and removed the previous tuning buttons. Backend is not there yet so it&#x27;s not working.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:33:13 2026 +0700</td><td>Arrows spacing</td><td>Spaced out the up and down arrows so it fits with the rest of the website.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:29:13 2026 +0700</td><td>Update the style of the up and down arrow keys</td><td>Claude helped with the background line.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:15:10 2026 +0700</td><td>Added a favicon</td><td>Claude helped with this but I came up with the wave design.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:09:36 2026 +0700</td><td>Added Esc function to end the session</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:06:04 2026 +0700</td><td>Pitch lift at the end of session</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:59:04 2026 +0700</td><td>Update style.css</td><td>Added hover animations on the set up page.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:49:43 2026 +0700</td><td>Fixed volume slider</td><td>Fix the slider and made it longer.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:35:04 2026 +0700</td><td>Added a volume slider</td><td>Volume slider at the bottom of the set up page</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 14:12:59 2026 +0700</td><td>Uploaded Prototype</td><td></td></tr>
+                        </tbody>
+                    </table>
+                    <p class="log-download"><a href="./assets/logs/LayoutThree.csv" download>Download this log as a CSV</a></p>
+                </details>
+
+            </section>
+
+            <section id="feedback">
+                <h3>Feedback</h3>
+
+                <p>Feedback covers the session screen, and how people know a session is ending. There are different ways to tell someone the session is over, and I'm not sure which one is best, which is why I need peer feedback on it. All three use Temporal to time the ending.</p>
+
+                <h4><a href="https://dilationfeedbackone.github.io/DilationFeedbackOne/" target="_blank" rel="noopener">Prototype 4: Bell</a></h4>
+                <p>A soft bell when the time runs out, right as the fade out begins. It's simple and instant. As soon as the bell rings, you know the session is ending. Nothing complicated.</p>
+                <details class="log">
+                    <summary>Commit log (14 commits)</summary>
+                    <table>
+                        <caption>Commit log, FeedbackOne branch</caption>
+                        <thead>
+                            <tr><th scope="col">Author</th><th scope="col">Date</th><th scope="col">Subject</th><th scope="col">Body</th></tr>
+                        </thead>
+                        <tbody>
+                        <tr><td>SoleyatRmit</td><td>Tue Sep 29 10:12:55 2026 +0700</td><td>Bell only rings when time runs out</td><td>The bell now only rings when the time naturally runs out. The bell won&#x27;t ring when the user manually ends the session anymore.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Tue Sep 29 09:09:37 2026 +0700</td><td>Gave the bell some reverb</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Tue Sep 29 09:01:21 2026 +0700</td><td>Bell tuning</td><td>Bell sound now also follow the tune settings.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Tue Sep 29 08:51:43 2026 +0700</td><td>Update main.js</td><td>The bell volume now scales with the volume slider.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Tue Sep 29 08:47:22 2026 +0700</td><td>Added a bell sound at the end of every session</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:33:13 2026 +0700</td><td>Arrows spacing</td><td>Spaced out the up and down arrows so it fits with the rest of the website.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:29:13 2026 +0700</td><td>Update the style of the up and down arrow keys</td><td>Claude helped with the background line.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:15:10 2026 +0700</td><td>Added a favicon</td><td>Claude helped with this but I came up with the wave design.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:09:36 2026 +0700</td><td>Added Esc function to end the session</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:06:04 2026 +0700</td><td>Pitch lift at the end of session</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:59:04 2026 +0700</td><td>Update style.css</td><td>Added hover animations on the set up page.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:49:43 2026 +0700</td><td>Fixed volume slider</td><td>Fix the slider and made it longer.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:35:04 2026 +0700</td><td>Added a volume slider</td><td>Volume slider at the bottom of the set up page</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 14:12:59 2026 +0700</td><td>Uploaded Prototype</td><td></td></tr>
+                        </tbody>
+                    </table>
+                    <p class="log-download"><a href="./assets/logs/FeedbackOne.csv" download>Download this log as a CSV</a></p>
+                </details>
+
+                <h4><a href="https://dilationfeedbacktwo.github.io/DilationFeedbackTwo/" target="_blank" rel="noopener">Prototype 5: Closing-in chimes</a></h4>
+                <p>A bit more complicated. Instead of one bell, the chimes are part of the session. The first rings at halfway, then each one rings halfway through whatever time is left, so they get closer together until they're about a second apart. Then a lower final chime lands right at the end. Because there are several chimes, it feels like part of the session instead of one bell to end it.</p>
+                <details class="log">
+                    <summary>Commit log (15 commits)</summary>
+                    <table>
+                        <caption>Commit log, FeedbackTwo branch</caption>
+                        <thead>
+                            <tr><th scope="col">Author</th><th scope="col">Date</th><th scope="col">Subject</th><th scope="col">Body</th></tr>
+                        </thead>
+                        <tbody>
+                        <tr><td>SoleyatRmit</td><td>Tue Sep 29 14:57:43 2026 +0700</td><td>More chimes in short sessions</td><td>Chimes can now come as close as 1.2 seconds apart.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Tue Sep 29 14:52:56 2026 +0700</td><td>Added final end charm</td><td>Added one final charm that sounds different so users know for sure its ending.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Tue Sep 29 14:40:55 2026 +0700</td><td>Soft start</td><td>First chime now starts soft and goes to full volume halfway through.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Tue Sep 29 14:25:05 2026 +0700</td><td>Different chime tones</td><td>Chimes now have different notes</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Tue Sep 29 13:54:39 2026 +0700</td><td>Fixed the calculations</td><td>Instead of having fixed time, the chimes are now calculated by halving whatever time is left until there are less than 1.5 seconds apart.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Tue Sep 29 13:40:20 2026 +0700</td><td>Added closing in chimes</td><td>Chimes ring at a half, three quarters, seven eighths and fifteen sixteenths of the session, so they come closer together as the end nears. Claude helped a lot with this.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:33:13 2026 +0700</td><td>Arrows spacing</td><td>Spaced out the up and down arrows so it fits with the rest of the website.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:29:13 2026 +0700</td><td>Update the style of the up and down arrow keys</td><td>Claude helped with the background line.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:15:10 2026 +0700</td><td>Added a favicon</td><td>Claude helped with this but I came up with the wave design.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:09:36 2026 +0700</td><td>Added Esc function to end the session</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:06:04 2026 +0700</td><td>Pitch lift at the end of session</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:59:04 2026 +0700</td><td>Update style.css</td><td>Added hover animations on the set up page.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:49:43 2026 +0700</td><td>Fixed volume slider</td><td>Fix the slider and made it longer.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:35:04 2026 +0700</td><td>Added a volume slider</td><td>Volume slider at the bottom of the set up page</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 14:12:59 2026 +0700</td><td>Uploaded Prototype</td><td></td></tr>
+                        </tbody>
+                    </table>
+                    <p class="log-download"><a href="./assets/logs/FeedbackTwo.csv" download>Download this log as a CSV</a></p>
+                </details>
+
+                <h4><a href="https://dilationfeedbackthree.github.io/DilationFeedbackThree/" target="_blank" rel="noopener">Prototype 6: Countdown</a></h4>
+                <p>Simple: the fade out is counted down in numbers at the end of the session. If you're not looking at the screen you'd miss it, so I added a tick with each number. The bigger problem is that it has numbers. My whole goal was no numbers and no sense of the exact time, and this goes against that. That's exactly why I want peer feedback on it, because nothing tells you a session is ending more clearly than a countdown.</p>
+                <details class="log">
+                    <summary>Commit log (12 commits)</summary>
+                    <table>
+                        <caption>Commit log, FeedbackThree branch</caption>
+                        <thead>
+                            <tr><th scope="col">Author</th><th scope="col">Date</th><th scope="col">Subject</th><th scope="col">Body</th></tr>
+                        </thead>
+                        <tbody>
+                        <tr><td>SoleyatRmit</td><td>Tue Sep 29 21:02:27 2026 +0700</td><td>Added tick sounds when counting down</td><td>Make it so people who aren&#x27;t looking at the screen can hear the countdown. Claude helped a lot with this.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Tue Sep 29 20:42:28 2026 +0700</td><td>Removed the end button while during countdown</td><td>The end button is not needed after the countdown begins.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Tue Sep 29 20:38:21 2026 +0700</td><td>Added countdown at the end of session</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:33:13 2026 +0700</td><td>Arrows spacing</td><td>Spaced out the up and down arrows so it fits with the rest of the website.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:29:13 2026 +0700</td><td>Update the style of the up and down arrow keys</td><td>Claude helped with the background line.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:15:10 2026 +0700</td><td>Added a favicon</td><td>Claude helped with this but I came up with the wave design.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:09:36 2026 +0700</td><td>Added Esc function to end the session</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:06:04 2026 +0700</td><td>Pitch lift at the end of session</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:59:04 2026 +0700</td><td>Update style.css</td><td>Added hover animations on the set up page.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:49:43 2026 +0700</td><td>Fixed volume slider</td><td>Fix the slider and made it longer.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:35:04 2026 +0700</td><td>Added a volume slider</td><td>Volume slider at the bottom of the set up page</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 14:12:59 2026 +0700</td><td>Uploaded Prototype</td><td></td></tr>
+                        </tbody>
+                    </table>
+                    <p class="log-download"><a href="./assets/logs/FeedbackThree.csv" download>Download this log as a CSV</a></p>
+                </details>
+
+            </section>
+
+            <section id="testing">
+                <h3>Peer User Testing</h3>
+                <p><a href="#" target="_blank" rel="noopener">Peer User Testing Form</a></p>
+            </section>
+
+            <section id="references">
+                <h3>References</h3>
+                <p>Ableton n.d., <cite>Learning Synths</cite>, viewed 12 August 2026, &lt;<a href="https://learningsynths.ableton.com/" target="_blank" rel="noopener">https://learningsynths.ableton.com/</a>&gt;.</p>
+            </section>
         </section>
     </main>
 
