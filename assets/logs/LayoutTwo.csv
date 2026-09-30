@@ -1,0 +1,17 @@
+Author,Date,Subject,Body
+SoleyatRmit,Mon Sep 28 18:29:28 2026 +0700,Update index.html,Fixed a bug where pressing Enter would skipped all the other pages and starts the session. Claude found this bug and fixed it too.
+SoleyatRmit,Mon Sep 28 18:25:14 2026 +0700,Update style.css,Added fade animation to the steps too
+SoleyatRmit,Mon Sep 28 18:20:57 2026 +0700,Page counter,Added page counter to see what page you're on and how many are left.
+SoleyatRmit,Mon Sep 28 18:13:53 2026 +0700,Update style.css,Style the next and back buttons. Make it match with the rest of the website.
+SoleyatRmit,Mon Sep 28 17:51:33 2026 +0700,Update index.html,Move Begin button to the last step
+SoleyatRmit,Mon Sep 28 17:49:26 2026 +0700,Show one setting at a time part 2,Continuing the coding and added next and back buttons.
+SoleyatRmit,Mon Sep 28 17:29:39 2026 +0700,Show one setting at a time,Make CSS show the settings in the address bar and if nothing is there then start at length (first step).
+SoleyatRmit,Mon Sep 28 16:33:13 2026 +0700,Arrows spacing,Spaced out the up and down arrows so it fits with the rest of the website.
+SoleyatRmit,Mon Sep 28 16:29:13 2026 +0700,Update the style of the up and down arrow keys,Claude helped with the background line.
+SoleyatRmit,Mon Sep 28 16:15:10 2026 +0700,Added a favicon,Claude helped with this but I came up with the wave design.
+SoleyatRmit,Mon Sep 28 16:09:36 2026 +0700,Added Esc function to end the session,
+SoleyatRmit,Mon Sep 28 16:06:04 2026 +0700,Pitch lift at the end of session,
+SoleyatRmit,Mon Sep 28 15:59:04 2026 +0700,Update style.css,Added hover animations on the set up page.
+SoleyatRmit,Mon Sep 28 15:49:43 2026 +0700,Fixed volume slider,Fix the slider and made it longer.
+SoleyatRmit,Mon Sep 28 15:35:04 2026 +0700,Added a volume slider,Volume slider at the bottom of the set up page
+SoleyatRmit,Mon Sep 28 14:12:59 2026 +0700,Uploaded Prototype,

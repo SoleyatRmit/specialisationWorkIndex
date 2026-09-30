@@ -1,0 +1,13 @@
+Author,Date,Subject,Body
+SoleyatRmit,Tue Sep 29 21:02:27 2026 +0700,Added tick sounds when counting down,Make it so people who aren't looking at the screen can hear the countdown. Claude helped a lot with this.
+SoleyatRmit,Tue Sep 29 20:42:28 2026 +0700,Removed the end button while during countdown,The end button is not needed after the countdown begins.
+SoleyatRmit,Tue Sep 29 20:38:21 2026 +0700,Added countdown at the end of session,
+SoleyatRmit,Mon Sep 28 16:33:13 2026 +0700,Arrows spacing,Spaced out the up and down arrows so it fits with the rest of the website.
+SoleyatRmit,Mon Sep 28 16:29:13 2026 +0700,Update the style of the up and down arrow keys,Claude helped with the background line.
+SoleyatRmit,Mon Sep 28 16:15:10 2026 +0700,Added a favicon,Claude helped with this but I came up with the wave design.
+SoleyatRmit,Mon Sep 28 16:09:36 2026 +0700,Added Esc function to end the session,
+SoleyatRmit,Mon Sep 28 16:06:04 2026 +0700,Pitch lift at the end of session,
+SoleyatRmit,Mon Sep 28 15:59:04 2026 +0700,Update style.css,Added hover animations on the set up page.
+SoleyatRmit,Mon Sep 28 15:49:43 2026 +0700,Fixed volume slider,Fix the slider and made it longer.
+SoleyatRmit,Mon Sep 28 15:35:04 2026 +0700,Added a volume slider,Volume slider at the bottom of the set up page
+SoleyatRmit,Mon Sep 28 14:12:59 2026 +0700,Uploaded Prototype,

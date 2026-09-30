@@ -1,0 +1,15 @@
+Author,Date,Subject,Body
+SoleyatRmit,Tue Sep 29 10:12:55 2026 +0700,Bell only rings when time runs out,The bell now only rings when the time naturally runs out. The bell won't ring when the user manually ends the session anymore.
+SoleyatRmit,Tue Sep 29 09:09:37 2026 +0700,Gave the bell some reverb,
+SoleyatRmit,Tue Sep 29 09:01:21 2026 +0700,Bell tuning,Bell sound now also follow the tune settings.
+SoleyatRmit,Tue Sep 29 08:51:43 2026 +0700,Update main.js,The bell volume now scales with the volume slider.
+SoleyatRmit,Tue Sep 29 08:47:22 2026 +0700,Added a bell sound at the end of every session,
+SoleyatRmit,Mon Sep 28 16:33:13 2026 +0700,Arrows spacing,Spaced out the up and down arrows so it fits with the rest of the website.
+SoleyatRmit,Mon Sep 28 16:29:13 2026 +0700,Update the style of the up and down arrow keys,Claude helped with the background line.
+SoleyatRmit,Mon Sep 28 16:15:10 2026 +0700,Added a favicon,Claude helped with this but I came up with the wave design.
+SoleyatRmit,Mon Sep 28 16:09:36 2026 +0700,Added Esc function to end the session,
+SoleyatRmit,Mon Sep 28 16:06:04 2026 +0700,Pitch lift at the end of session,
+SoleyatRmit,Mon Sep 28 15:59:04 2026 +0700,Update style.css,Added hover animations on the set up page.
+SoleyatRmit,Mon Sep 28 15:49:43 2026 +0700,Fixed volume slider,Fix the slider and made it longer.
+SoleyatRmit,Mon Sep 28 15:35:04 2026 +0700,Added a volume slider,Volume slider at the bottom of the set up page
+SoleyatRmit,Mon Sep 28 14:12:59 2026 +0700,Uploaded Prototype,

@@ -1,0 +1,16 @@
+Author,Date,Subject,Body
+SoleyatRmit,Mon Sep 28 20:41:33 2026 +0700,Added arrow keys support for the pad,
+SoleyatRmit,Mon Sep 28 20:17:02 2026 +0700,Labelled the pad,
+SoleyatRmit,Mon Sep 28 19:51:30 2026 +0700,Update main.js,Added feature where you can hear the preview while dragging on the pad. Claude helped a lot with this part.
+SoleyatRmit,Mon Sep 28 19:22:56 2026 +0700,Update main.js,"Added brightness to the pad, so y level for brightness and x level for pitch."
+SoleyatRmit,Mon Sep 28 19:03:18 2026 +0700,Making the Pad functional,Making it draggable and continuing with the coding. Claude helped a lot with this.
+SoleyatRmit,Mon Sep 28 18:51:27 2026 +0700,Replaced tuning with a pad,Added a pad and removed the previous tuning buttons. Backend is not there yet so it's not working.
+SoleyatRmit,Mon Sep 28 16:33:13 2026 +0700,Arrows spacing,Spaced out the up and down arrows so it fits with the rest of the website.
+SoleyatRmit,Mon Sep 28 16:29:13 2026 +0700,Update the style of the up and down arrow keys,Claude helped with the background line.
+SoleyatRmit,Mon Sep 28 16:15:10 2026 +0700,Added a favicon,Claude helped with this but I came up with the wave design.
+SoleyatRmit,Mon Sep 28 16:09:36 2026 +0700,Added Esc function to end the session,
+SoleyatRmit,Mon Sep 28 16:06:04 2026 +0700,Pitch lift at the end of session,
+SoleyatRmit,Mon Sep 28 15:59:04 2026 +0700,Update style.css,Added hover animations on the set up page.
+SoleyatRmit,Mon Sep 28 15:49:43 2026 +0700,Fixed volume slider,Fix the slider and made it longer.
+SoleyatRmit,Mon Sep 28 15:35:04 2026 +0700,Added a volume slider,Volume slider at the bottom of the set up page
+SoleyatRmit,Mon Sep 28 14:12:59 2026 +0700,Uploaded Prototype,
