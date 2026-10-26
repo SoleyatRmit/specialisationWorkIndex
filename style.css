@@ -392,3 +392,90 @@ details.log[open] summary {
     margin-block-start: 0.5rem;
     font-size: 0.875rem;
 }
+
+/* Assignment 3 */
+
+/* The link to the finished instrument. */
+.open-link a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    background-color: var(--accent);
+    color: var(--bg);
+    font-weight: 600;
+}
+
+main .open-link a:hover {
+    text-decoration: none;
+    filter: brightness(1.1);
+}
+
+.note {
+    font-size: 0.9375rem;
+}
+
+/* On this page links. */
+main .contents {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-inline-start: 0;
+    list-style: none;
+}
+
+main .contents li + li {
+    margin-block-start: 0;
+}
+
+.contents a {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    font-size: 0.9375rem;
+}
+
+/* Screenshots side by side. */
+.pair,
+.trio {
+    display: grid;
+    gap: 1rem;
+}
+
+.pair {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.trio {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+:is(.pair, .trio) figure {
+    margin: 0;
+}
+
+@media (max-width: 679px) {
+    .pair,
+    .trio {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Colour samples in the token table. */
+.swatch {
+    display: inline-block;
+    width: 0.9em;
+    height: 0.9em;
+    margin-inline-end: 0.5em;
+    border: 1px solid var(--hairline);
+    border-radius: 3px;
+    background-color: var(--swatch);
+    vertical-align: -0.1em;
+}
+
+/* Code names inside sentences. */
+:not(pre) > code {
+    padding: 0.1em 0.35em;
+    border-radius: 0.3em;
+    background-color: var(--hairline);
+}

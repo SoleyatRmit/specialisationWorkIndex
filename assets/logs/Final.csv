@@ -1,0 +1,43 @@
+Author,Date,Subject,Body
+SoleyatRmit,Sun Oct 25 13:14:08 2026 +0700,Added screen reader,
+SoleyatRmit,Sun Oct 25 00:12:53 2026 +0700,Screen widths,"Made four layouts for screen widths. The set up screen now scales with the screen widths (Medium, expanded, large and extra large)."
+SoleyatRmit,Sat Oct 24 20:36:53 2026 +0700,Made the number arrows work in Firefox,-webkit-inner-spin-button doesn't work in Firefox so it's been replaced with plus and minus buttons.
+SoleyatRmit,Sat Oct 24 20:03:45 2026 +0700,Replaced tooltips with hints,Peer testing showed that no one found out that hovering above anything will show tooltips so it's been replaced with hints.
+SoleyatRmit,Sat Oct 24 13:44:59 2026 +0700,Improved readability,"made text and edges easier to see, I used Claude and read WCAG website for this."
+SoleyatRmit,Sat Oct 24 13:15:39 2026 +0700,Update style.css,Design tokens. Make sure everything is clean and easier for others to read.
+SoleyatRmit,Fri Oct 23 00:30:03 2026 +0700,Color session screen,Added colors to session screen for different voices.
+SoleyatRmit,Sat Oct 10 07:41:14 2026 +0700,Added glow when bell rings,In testing only 4 out of 12 clearly notice the bell and countdown was voted as the clearest but felt worse because of the numbers. So I'm adding a visual cue (glow) to the bell instead of a countdown.
+SoleyatRmit,Sat Oct 10 05:07:31 2026 +0700,Quick start,one tester said the steps help you learn but they wouldn't want to do it every time so I added a quick start option.
+SoleyatRmit,Fri Oct 9 21:51:40 2026 +0700,Remember settings,choices saved in browser
+SoleyatRmit,Fri Oct 9 21:23:59 2026 +0700,Added voice preview,Many testers like the pad preview so I added preview to the voice too.
+SoleyatRmit,Fri Oct 9 20:14:26 2026 +0700,Showed voice descriptions,Two testers asked what each voice sounds like. They were hidden in hover tooltips but I guess that was hard to discover so I added description under each voice instead.
+SoleyatRmit,Fri Oct 9 16:36:38 2026 +0700,Added error message if the sound can't start,Wait 3 seconds and if no sound then it goes back to set up screen with a message.
+SoleyatRmit,Fri Oct 9 12:10:51 2026 +0700,Merge branch 'LayoutTwo',
+SoleyatRmit,Fri Oct 9 12:09:15 2026 +0700,Merge branch 'LayoutThree',
+SoleyatRmit,Tue Sep 29 10:12:55 2026 +0700,Bell only rings when time runs out,The bell now only rings when the time naturally runs out. The bell won't ring when the user manually ends the session anymore.
+SoleyatRmit,Tue Sep 29 09:09:37 2026 +0700,Gave the bell some reverb,
+SoleyatRmit,Tue Sep 29 09:01:21 2026 +0700,Bell tuning,Bell sound now also follow the tune settings.
+SoleyatRmit,Tue Sep 29 08:51:43 2026 +0700,Update main.js,The bell volume now scales with the volume slider.
+SoleyatRmit,Tue Sep 29 08:47:22 2026 +0700,Added a bell sound at the end of every session,
+SoleyatRmit,Mon Sep 28 20:41:33 2026 +0700,Added arrow keys support for the pad,
+SoleyatRmit,Mon Sep 28 20:17:02 2026 +0700,Labelled the pad,
+SoleyatRmit,Mon Sep 28 19:51:30 2026 +0700,Update main.js,Added feature where you can hear the preview while dragging on the pad. Claude helped a lot with this part.
+SoleyatRmit,Mon Sep 28 19:22:56 2026 +0700,Update main.js,"Added brightness to the pad, so y level for brightness and x level for pitch."
+SoleyatRmit,Mon Sep 28 19:03:18 2026 +0700,Making the Pad functional,Making it draggable and continuing with the coding. Claude helped a lot with this.
+SoleyatRmit,Mon Sep 28 18:51:27 2026 +0700,Replaced tuning with a pad,Added a pad and removed the previous tuning buttons. Backend is not there yet so it's not working.
+SoleyatRmit,Mon Sep 28 18:29:28 2026 +0700,Update index.html,Fixed a bug where pressing Enter would skipped all the other pages and starts the session. Claude found this bug and fixed it too.
+SoleyatRmit,Mon Sep 28 18:25:14 2026 +0700,Update style.css,Added fade animation to the steps too
+SoleyatRmit,Mon Sep 28 18:20:57 2026 +0700,Page counter,Added page counter to see what page you're on and how many are left.
+SoleyatRmit,Mon Sep 28 18:13:53 2026 +0700,Update style.css,Style the next and back buttons. Make it match with the rest of the website.
+SoleyatRmit,Mon Sep 28 17:51:33 2026 +0700,Update index.html,Move Begin button to the last step
+SoleyatRmit,Mon Sep 28 17:49:26 2026 +0700,Show one setting at a time part 2,Continuing the coding and added next and back buttons.
+SoleyatRmit,Mon Sep 28 17:29:39 2026 +0700,Show one setting at a time,Make CSS show the settings in the address bar and if nothing is there then start at length (first step).
+SoleyatRmit,Mon Sep 28 16:33:13 2026 +0700,Arrows spacing,Spaced out the up and down arrows so it fits with the rest of the website.
+SoleyatRmit,Mon Sep 28 16:29:13 2026 +0700,Update the style of the up and down arrow keys,Claude helped with the background line.
+SoleyatRmit,Mon Sep 28 16:15:10 2026 +0700,Added a favicon,Claude helped with this but I came up with the wave design.
+SoleyatRmit,Mon Sep 28 16:09:36 2026 +0700,Added Esc function to end the session,
+SoleyatRmit,Mon Sep 28 16:06:04 2026 +0700,Pitch lift at the end of session,
+SoleyatRmit,Mon Sep 28 15:59:04 2026 +0700,Update style.css,Added hover animations on the set up page.
+SoleyatRmit,Mon Sep 28 15:49:43 2026 +0700,Fixed volume slider,Fix the slider and made it longer.
+SoleyatRmit,Mon Sep 28 15:35:04 2026 +0700,Added a volume slider,Volume slider at the bottom of the set up page
+SoleyatRmit,Mon Sep 28 14:12:59 2026 +0700,Uploaded Prototype,

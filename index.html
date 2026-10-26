@@ -32,9 +32,390 @@
     </nav>
 
     <main>
-        <section id="design-scenario">
-            <h2>Design Scenario</h2>
-            <p>This site is made for RMIT 2026 Interface Design and Development course. This website was inspired by Apple's liquid glass and every design decision is mine.</p>
+        <!-- Synopsis and the link to the finished instrument -->
+        <section id="dilation">
+            <h2>Dilation</h2>
+
+            <p>Dilation is a browser instrument for building a stretch of time and letting it run without distracting you. You make a soundscape, set how long it runs, then stop looking at the screen. The sound carries you and tells you roughly where you are without showing you a single number.</p>
+
+            <p>I picked the name Dilation because I love physics. In Einstein's theory of relativity there's a thing called time dilation, and to sum it up, it means time doesn't move the same for everyone. How fast or slow time moves depends on how fast you're moving and how much gravity you're sitting in (Encyclopaedia Britannica 2026). Two people can both set a one minute session and end up experiencing something completely different.</p>
+
+            <p>There are two screens. The first is the setup, where you build the session one step at a time: how long it runs, the voice, the tone, the fades and the volume. The second is the session screen, which shows slow waves in the colour of your voice and no numbers at all. When the time is up a soft bell rings, a warm glow blooms, and the sound fades to nothing.</p>
+
+            <p class="open-link"><a href="https://soleyatrmit.github.io/Dilation/" target="_blank" rel="noopener">Open Dilation</a></p>
+            <p class="note">Made for laptops and desktops, in Chrome or Firefox. It makes sound, so check your volume first.</p>
+
+            <figure>
+                <img src="./assets/images/a3/setup-large.png" alt="The Dilation setup screen on a laptop. The title, a one line description and a volume notice sit on the left. On the right is the first step, Length 1 of 5, with buttons for 20 sec, 1 min, 5 min, 20 min and Custom, and a Next button." width="1366" height="768">
+                <figcaption>The setup screen on a 1366px wide laptop, in Firefox.</figcaption>
+            </figure>
+
+            <!-- On this page -->
+            <ul class="contents" aria-label="On this page">
+                <li><a href="#scenario">Design scenario</a></li>
+                <li><a href="#features">Core interactive features</a></li>
+                <li><a href="#temporal">Temporal</a></li>
+                <li><a href="#design-system">Design system</a></li>
+                <li><a href="#commit-log">Commit log</a></li>
+                <li><a href="#references">References</a></li>
+            </ul>
+        </section>
+
+        <!-- The scenario and how Dilation responds to it -->
+        <section id="scenario">
+            <h2>Design scenario</h2>
+
+            <h3>Scenario 4: Sonic Timer</h3>
+            <blockquote>
+                <p><strong>Prompt.</strong> Design a way for users to relate to time using audio. This relation <em>does not</em> have to be quantitative measurement.</p>
+                <p><strong>Context.</strong> Clocks of various types are usually the instrument most strongly related to measuring regular intervals of time such as seconds, minutes and hours. Audio may instead be used to measure different intervals or otherwise change a user's experience of time, such as breaths in a period or meditation, or hold music while waiting on the phone.</p>
+            </blockquote>
+            <p class="note">The design scenario provided in the course brief.</p>
+
+            <h3>How Dilation responds</h3>
+            <p><strong>Purpose.</strong> Let the user set aside a period of time without having to look at it, and let them decide what that time sounds like before it starts.</p>
+            <p><strong>Worth.</strong></p>
+            <ul>
+                <li>Let users keep their attention instead of spending it on the screen</li>
+                <li>Let time be felt as something closer to art, elegant rather than a number going down</li>
+                <li>Let the ending come slowly instead of abruptly</li>
+                <li>Make each session belong to the person who built it, rather than a preset everyone else gets</li>
+            </ul>
+
+            <p>Dilation answers the prompt directly. You relate to time purely through audio: you can hear when a session starts, where the middle is and when it ends. I could have designed something that reads out the time, like counting every second or every minute, but that would be too simple. Dilation is a calm, relaxing way of doing it.</p>
+            <p>It changed a lot from my Assignment 1 plan after peer testing. The first prototypes weren't as polished as this, but peer user testing was extremely useful. Before doing it, I thought it might not be that important and I just had to make my own polished version. After the feedback and the answers to my questions, I know it's extremely important. I now know how most users feel and what they missed, such as the tooltips, along with changes they wanted on the setup and session screens.</p>
+
+            <h3>What peer testing changed</h3>
+            <p>Twelve classmates tried all six prototypes from <a href="./assignment2.html">Assignment 2</a> on 1 October. These results decided what went into the final version.</p>
+            <div class="log">
+                <table>
+                    <caption>Peer testing results, 12 testers</caption>
+                    <thead>
+                        <tr><th scope="col">Question</th><th scope="col">Result</th><th scope="col">What went in</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Easiest layout to understand</td><td>One at a time 6, Pad 4, Stacked 2</td><td>Setup in five steps</td></tr>
+                        <tr><td>Layout enjoyed most</td><td>Pad 8, One at a time 3, Stacked 1</td><td>The pad became the Tone step</td></tr>
+                        <tr><td>Did hearing the pad make choosing easier?</td><td>Yes 7, Neutral 3, No 2</td><td>Voices play a sample too</td></tr>
+                        <tr><td>Noticed the ending with eyes closed</td><td>Countdown 9, Bell 4, Chimes 1</td><td>A glow added to the bell</td></tr>
+                        <tr><td>Most comfortable ending</td><td>Bell 8, Chimes 3, Countdown 1</td><td>The bell</td></tr>
+                        <tr><td>Numbers at the end made it</td><td>Worse 6, No difference 4, Better 2</td><td>Still no numbers</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- How each feature works and why -->
+        <section id="features">
+            <h2>Core interactive features</h2>
+
+            <p>Dilation has two screens, setup and session. JavaScript makes the sound with <a href="https://tonejs.github.io/" target="_blank" rel="noopener">Tone.js</a> (Mann n.d.), keeps time with Temporal, and sets one attribute on the page, <code>data-state</code>, to idle, running or ending. CSS reads that attribute and changes the screen to match (<a href="https://github.com/SoleyatRmit/Dilation/blob/fc09c77852b1a58a974743c1d27797770e98f606/main.js#L41-L44" target="_blank" rel="noopener">main.js, lines 41 to 44</a>).</p>
+
+            <h3>Setup in five steps</h3>
+            <figure>
+                <img src="./assets/images/a3/step-length.png" alt="The Length step with Custom picked. Two number fields for minutes and seconds, each with a minus and plus button, a hint saying up to 120 minutes and at least 10 seconds, and a Next button." width="552" height="285">
+                <figcaption>Step 1 of 5, with a custom length.</figcaption>
+            </figure>
+            <p>The setup asks five questions, one at a time: length, voice, tone, fades and volume. Each step is its own section, and Next and Back are plain links to the next section's address, so CSS shows whichever step is in the address bar using <code>:target</code>. A counter shows which step you're on. Begin only appears on the last step, and pressing Enter can't skip ahead.</p>
+            <p>I picked one step at a time because peer testing showed it was the easiest layout to understand, and it gives the user more time and focus on each step. If you only show one step at a time, people focus solely on that step. If you show all five at once, they spend less time on each one.</p>
+
+            <h3>Voices you can hear before you pick</h3>
+            <figure>
+                <img src="./assets/images/a3/step-voice.png" alt="The Voice step. Three buttons: Glass, soft like a singing bowl; Wood, warm like a flute; Air, rich like an organ. Glass is selected." width="552" height="236">
+                <figcaption>Step 2 of 5. Each voice has a short description under its name.</figcaption>
+            </figure>
+            <p>There are three voices, Glass, Wood and Air. Each one is a different waveform, so they sound clearly different at the same pitch. Picking a voice plays a short sample of it for about a second and a half, at your tone settings. Picking another one fades the first out so they don't pile up (<a href="https://github.com/SoleyatRmit/Dilation/blob/fc09c77852b1a58a974743c1d27797770e98f606/main.js#L166-L203" target="_blank" rel="noopener">main.js, lines 166 to 203</a>).</p>
+            <p>The voices have descriptions and samples so users can choose what they like instead of going in blind. A description only gets them part of the way, but a sample is the closest thing to the real session.</p>
+
+            <h3>The tone pad</h3>
+            <figure>
+                <img src="./assets/images/a3/step-tone.png" alt="The Tone step. A wide dark box labelled Bright at the top and Dark at the bottom, with Low pitch and High pitch underneath. A filled dot sits near the top left while it's being dragged." width="552" height="345">
+                <figcaption>Step 3 of 5, while the pad is being dragged.</figcaption>
+            </figure>
+            <p>The pad sets two things at once. Left to right is pitch, from 65 to 165 Hz, and top to bottom is brightness, which opens or closes a filter on the sound. While you hold the pad you hear a quiet preview that follows the dot, so you hear the session before it starts. The arrow keys move the dot too, with the same preview (<a href="https://github.com/SoleyatRmit/Dilation/blob/fc09c77852b1a58a974743c1d27797770e98f606/main.js#L62-L71" target="_blank" rel="noopener">main.js, lines 62 to 71</a>).</p>
+            <p>I chose a pad over buttons because you can make much smaller adjustments with it. Buttons only give you a few options, but on a pad you can land anywhere, so it's more accurate. It's also more fun. You get to move around, instead of the setup screen being filled with buttons.</p>
+
+            <h3>Fades and volume</h3>
+            <div class="pair">
+                <figure>
+                    <img src="./assets/images/a3/step-fades.png" alt="The Fades step. Fade in is 4 seconds and fade out is 5 seconds, each with minus and plus buttons, and a hint underneath." width="552" height="214">
+                    <figcaption>Step 4 of 5.</figcaption>
+                </figure>
+                <figure>
+                    <img src="./assets/images/a3/step-volume.png" alt="The Volume step. A slider from Quiet to Loud, a Back button and a wide Begin button." width="552" height="215">
+                    <figcaption>Step 5 of 5.</figcaption>
+                </figure>
+            </div>
+            <p>You choose how long the sound takes to rise at the start and fade at the end, from 1 to 30 seconds each, and how loud it plays. The sound never starts at full volume. The screen fades to black over the same time as the sound, so the two end together.</p>
+            <p>Setting the fades and volume before the session is about customisation and preference. Some people prefer a longer fade, while others prefer a shorter, quicker ending. Volume is the same. Some like it loud and some like it quiet.</p>
+
+            <h3>Quick start</h3>
+            <figure>
+                <img src="./assets/images/a3/step-quick-start.png" alt="The Length step for a returning user. Under the usual buttons is a divider and a button saying Start with last time's settings, with the summary 20 sec, Air voice." width="552" height="300">
+                <figcaption>The first step after you've done a session before.</figcaption>
+            </figure>
+            <p>Your choices are saved in the browser when a session starts, and put back next time, including the dot on the pad. Once there's a saved session, the first step shows a button to start straight away with last time's settings, with a summary under it. Nothing leaves your browser, and there's no account (<a href="https://github.com/SoleyatRmit/Dilation/blob/fc09c77852b1a58a974743c1d27797770e98f606/main.js#L129-L164" target="_blank" rel="noopener">main.js, lines 129 to 164</a>).</p>
+            <p>The quick start means users don't have to set everything up again. They can start with one click, which is easier and faster. It's basically a quality of life improvement.</p>
+
+            <h3>The session</h3>
+            <div class="trio">
+                <figure>
+                    <img src="./assets/images/a3/session-glass.jpg" alt="The session screen with the Glass voice. Four thin waves across a dark screen with a soft blue wash, and an End session button at the bottom." width="1366" height="768">
+                    <figcaption>Glass</figcaption>
+                </figure>
+                <figure>
+                    <img src="./assets/images/a3/session-wood.jpg" alt="The session screen with the Wood voice, with a soft amber wash behind the waves." width="1366" height="768">
+                    <figcaption>Wood</figcaption>
+                </figure>
+                <figure>
+                    <img src="./assets/images/a3/session-air.jpg" alt="The session screen with the Air voice, with a soft violet wash behind the waves." width="1366" height="768">
+                    <figcaption>Air</figcaption>
+                </figure>
+            </div>
+            <p>The sound moves through three phases. For the first fifth it's sparse and low while you settle. Through the middle a filter opens and higher notes fade in, so it gets fuller and warmer. In the last quarter it thins out and lifts in pitch by just under a semitone, so you feel it closing before it closes (<a href="https://github.com/SoleyatRmit/Dilation/blob/fc09c77852b1a58a974743c1d27797770e98f606/main.js#L259-L289" target="_blank" rel="noopener">main.js, lines 259 to 289</a>).</p>
+            <p>The screen shows four slow waves in the colour of your voice: blue for Glass, amber for Wood and violet for Air. They drift and bob but carry no information about time. After 30 seconds the waves and the End button dim. Hovering over End brings it back, and Escape ends the session at any time.</p>
+            <p>The session screen shows no time because that would go against what I'm making. It dims so it stays calm and doesn't feel like a timer. When someone is meditating or resting and an alarm goes off, it comes as a surprise and pulls them out of it. Dilation doesn't distract you at all.</p>
+
+            <h3>The ending</h3>
+            <figure>
+                <img src="./assets/images/a3/session-bell.jpg" alt="The session screen at the moment the bell rings. A large warm glow fills the middle of the screen behind the waves." width="1366" height="768">
+                <figcaption>The glow when the bell rings.</figcaption>
+            </figure>
+            <p>When the time runs out, a soft bell rings two octaves above the drone, so it's in tune with whatever pitch you picked. At the same time a warm glow blooms in the middle of the screen and fades over four seconds, while the sound and the screen fade out together. When the fade finishes you're back at the setup. Ending early with End or Escape fades out without the bell, so the bell always means the time is up (<a href="https://github.com/SoleyatRmit/Dilation/blob/fc09c77852b1a58a974743c1d27797770e98f606/main.js#L291-L308" target="_blank" rel="noopener">main.js, lines 291 to 308</a>).</p>
+            <p>A bell is clearer than chimes, and in peer testing the bell was the most comfortable ending and the one most people picked. The glow came from testing too. Only 4 of 12 testers clearly noticed the bell with their eyes closed, and the countdown was the clearest but felt worse because of the numbers. The glow makes the ending clearer without showing a number.</p>
+            <p>All these features are combined to make a calm atmosphere.</p>
+
+            <h3>If the sound can't start</h3>
+            <p>Browsers only allow sound after a click. If the sound still hasn't started 3 seconds after Begin, Dilation goes back to the setup with a message instead of leaving you on a silent screen (<a href="https://github.com/SoleyatRmit/Dilation/blob/fc09c77852b1a58a974743c1d27797770e98f606/main.js#L79-L84" target="_blank" rel="noopener">main.js, lines 79 to 84</a>).</p>
+        </section>
+
+        <!-- The extended technique -->
+        <section id="temporal">
+            <h2>Extended technique: Temporal</h2>
+
+            <p>Temporal is JavaScript's newer way of working with dates and times. It has separate objects for an exact moment (<code>Temporal.Instant</code>) and a length of time (<code>Temporal.Duration</code>) (MDN 2026). Dilation uses both to run the session clock.</p>
+
+            <h3>How Dilation uses it</h3>
+            <p><strong>1. The session length is a Duration.</strong> Presets and custom lengths both become a <code>Temporal.Duration</code>. A custom length shorter than 10 seconds is raised to 10 seconds by comparing two Durations (<a href="https://github.com/SoleyatRmit/Dilation/blob/fc09c77852b1a58a974743c1d27797770e98f606/main.js#L342-L357" target="_blank" rel="noopener">main.js, lines 342 to 357</a>).</p>
+            <pre><code>totalDuration = Temporal.Duration.from({ minutes, seconds });
+
+const shortest = Temporal.Duration.from({ seconds: 10 });
+if (Temporal.Duration.compare(totalDuration, shortest) &lt; 0) {
+    totalDuration = shortest;
+}</code></pre>
+
+            <p><strong>2. The start is an Instant.</strong> When the sound starts, <code>Temporal.Now.instant()</code> records the exact moment.</p>
+
+            <p><strong>3. Progress is read fresh from the clock.</strong> Four times a second, Dilation asks how much time has passed since the start and divides it by the length. That gives a number from 0 to 1, which sets the phase of the sound and rings the bell at 1 (<a href="https://github.com/SoleyatRmit/Dilation/blob/fc09c77852b1a58a974743c1d27797770e98f606/main.js#L253-L257" target="_blank" rel="noopener">main.js, lines 253 to 257</a>).</p>
+            <pre><code>function getProgress() {
+    const elapsed = Temporal.Now.instant().since(startInstant);
+    return Math.min(1, elapsed.total("milliseconds") / totalDuration.total("milliseconds"));
+}</code></pre>
+
+            <p>Because progress comes from the clock and not from counting ticks, it can't drift. Browsers slow timers down in background tabs, but a slow tick still reads the right time when it arrives, so the session ends on time even if you switch tabs.</p>
+            <p>I could have picked any of the extended techniques. I'm a very indecisive person and could spend days choosing, so I picked Temporal and committed to it. It ended up suiting Dilation well, because the whole instrument depends on knowing exactly how far through the session you are.</p>
+
+            <h3>Browser support</h3>
+            <p>Firefox has had Temporal built in since version 139 and Chrome since version 144 (Bryntum 2026). For older browsers and Safari, the page loads a small polyfill that adds it (<a href="https://github.com/fullcalendar/temporal-polyfill" target="_blank" rel="noopener">temporal-polyfill</a>). If neither works, Begin is switched off and a message explains why.</p>
+        </section>
+
+        <!-- Tokens, layout, accessibility and feedback -->
+        <section id="design-system">
+            <h2>Design system</h2>
+
+            <p>Every colour, font size, gap and timing in Dilation is a named token, set once at the top of the stylesheet and used by name everywhere else (<a href="https://github.com/SoleyatRmit/Dilation/blob/fc09c77852b1a58a974743c1d27797770e98f606/style.css#L5-L53" target="_blank" rel="noopener">style.css, lines 5 to 53</a>). Changing a token changes every part of the instrument that uses it.</p>
+            <p>I wanted Dilation to feel calm. The screen is dark, nothing is bright, and there are no flashing lights to distract the user. Where there is light, like the bell's glow, it fades in and out, and all the animations are smooth.</p>
+
+            <h3>Colour</h3>
+            <p>The setup is dark and nearly colourless, so nothing competes with the sound. Contrast is measured against the background, <code>#0d0d10</code>. WCAG asks for at least 4.5:1 for text and 3:1 for the edges of controls (W3C 2023).</p>
+            <div class="log">
+                <table>
+                    <caption>Colour tokens</caption>
+                    <thead>
+                        <tr><th scope="col">Token</th><th scope="col">Colour</th><th scope="col">Used for</th><th scope="col">Contrast</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>--text</code></td><td><span class="swatch" style="--swatch: #e8e8ea"></span>#e8e8ea</td><td>Main text, buttons</td><td>15.9:1</td></tr>
+                        <tr><td><code>--text-soft</code></td><td><span class="swatch" style="--swatch: #a8a8b2"></span>#a8a8b2</td><td>Step names, the volume notice</td><td>8.2:1</td></tr>
+                        <tr><td><code>--text-muted</code></td><td><span class="swatch" style="--swatch: #8a8a92"></span>#8a8a92</td><td>Hints, labels, step counter</td><td>5.7:1</td></tr>
+                        <tr><td><code>--accent</code></td><td><span class="swatch" style="--swatch: #a0aac8"></span>#a0aac8</td><td>Selected option, focus ring, Begin, pad dot</td><td>8.4:1</td></tr>
+                        <tr><td><code>--line-control</code></td><td><span class="swatch" style="--swatch: #666672"></span>#666672</td><td>Edges of buttons, fields and the pad</td><td>3.4:1</td></tr>
+                        <tr><td><code>--line-hover</code></td><td><span class="swatch" style="--swatch: #8a8a96"></span>#8a8a96</td><td>Edges on hover</td><td>5.7:1</td></tr>
+                        <tr><td><code>--line</code></td><td><span class="swatch" style="--swatch: #2a2a30"></span>#2a2a30</td><td>Dividers only, never a control</td><td>1.4:1</td></tr>
+                        <tr><td><code>--warning</code></td><td><span class="swatch" style="--swatch: #cc8888"></span>#cc8888</td><td>Error messages</td><td>6.9:1</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Colour only appears once the session starts, and it comes from your choice. Each voice has a hue, Glass 195 (blue), Wood 30 (amber) and Air 270 (violet), which JavaScript passes to CSS as <code>--hue</code> for the wash and the waves. The bell's glow is a warm white so it stands out from all three.</p>
+
+            <h3>Typography</h3>
+            <p>Dilation uses the system font, so it looks at home on any computer and loads instantly. There are three sizes: title 1.5rem, body 0.9rem and small 0.8rem. Step names are in capitals with wide spacing, so they read as labels rather than content. Every size is in rem, so if someone sets a bigger default font size in their browser, the whole instrument grows with it.</p>
+
+            <h3>Spacing and shape</h3>
+            <p>All gaps and padding come from one scale: 0.25, 0.5, 0.75, 1, 1.5, 2, 3, 4 and 6rem. Every button and field uses the same padding, so they're all the same height, at least 43px, well above the 24px minimum target size in WCAG 2.2. Corners are a 4px radius throughout.</p>
+
+            <h3>Motion</h3>
+            <div class="log">
+                <table>
+                    <caption>Motion tokens and timings</caption>
+                    <thead>
+                        <tr><th scope="col">Movement</th><th scope="col">Time</th><th scope="col">Why that speed</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Hover and selection</td><td>150ms (<code>--motion-quick</code>)</td><td>Fast enough to feel instant</td></tr>
+                        <tr><td>Changing step</td><td>400ms (<code>--motion-step</code>)</td><td>A soft fade so each step feels like the next page</td></tr>
+                        <tr><td>Back to the setup</td><td>800ms (<code>--motion-screen</code>)</td><td>Slower, after a session ends</td></tr>
+                        <tr><td>Waves drifting</td><td>38 to 70s per loop</td><td>Too slow to follow, so they can't be read as a clock</td></tr>
+                        <tr><td>Dimming</td><td>after 30s (<code>--dim-after</code>)</td><td>The screen gets less interesting the longer you stay</td></tr>
+                        <tr><td>Bell glow</td><td>4s</td><td>Fades with the bell's ring</td></tr>
+                        <tr><td>Final fade</td><td>Your fade out time</td><td>Screen and sound end together</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>If someone has reduced motion turned on in their system settings, the waves stay still and the setup and its steps appear without fading in (<a href="https://github.com/SoleyatRmit/Dilation/blob/fc09c77852b1a58a974743c1d27797770e98f606/style.css#L671-L701" target="_blank" rel="noopener">style.css, lines 671 to 701</a>).</p>
+
+            <h3>Layout across screen sizes</h3>
+            <p>The setup has a layout for each of the four screen widths (<a href="https://github.com/SoleyatRmit/Dilation/blob/fc09c77852b1a58a974743c1d27797770e98f606/style.css#L463-L531" target="_blank" rel="noopener">style.css, lines 463 to 531</a>). The session screen fills any screen, because the waves are sized to the window.</p>
+            <div class="log">
+                <table>
+                    <caption>Screen sizes</caption>
+                    <thead>
+                        <tr><th scope="col">Size</th><th scope="col">Width</th><th scope="col">What changes</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Medium</td><td>under 840px</td><td>One column, 30rem wide, title and notice above the step</td></tr>
+                        <tr><td>Expanded</td><td>840 to 1199px</td><td>The column widens to 34rem and the pad gets taller</td></tr>
+                        <tr><td>Large</td><td>1200 to 1600px</td><td>The title and notice move beside the steps, so each step sits near the top and the volume notice stays in view. Text grows to 17px</td></tr>
+                        <tr><td>Extra-large</td><td>over 1600px</td><td>Wider columns, a taller pad, and text grows to 18px for bigger screens seen from further away</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pair">
+                <figure>
+                    <img src="./assets/images/a3/width-800.png" alt="The Tone step at 800px wide. One centred column with the title and notice above the pad." width="800" height="700">
+                    <figcaption>Medium, 800px</figcaption>
+                </figure>
+                <figure>
+                    <img src="./assets/images/a3/width-1024.png" alt="The Tone step at 1024px wide. One wider column with a taller pad." width="1024" height="768">
+                    <figcaption>Expanded, 1024px</figcaption>
+                </figure>
+                <figure>
+                    <img src="./assets/images/a3/width-1366.png" alt="The Tone step at 1366px wide. The title and notice sit on the left and the pad on the right." width="1366" height="768">
+                    <figcaption>Large, 1366px</figcaption>
+                </figure>
+                <figure>
+                    <img src="./assets/images/a3/width-1920.png" alt="The Tone step at 1920px wide. The same two columns, larger, with a taller pad." width="1920" height="1080">
+                    <figcaption>Extra-large, 1920px</figcaption>
+                </figure>
+            </div>
+
+            <h3>Accessibility</h3>
+            <figure>
+                <img src="./assets/images/a3/focus-ring.png" alt="The Volume step with the Back button focused from the keyboard. A light ring sits just outside the button's edge." width="552" height="215">
+                <figcaption>The focus ring, shown when you move around with the keyboard.</figcaption>
+            </figure>
+            <ul>
+                <li><strong>Contrast.</strong> All text passes 4.5:1 and every control edge passes 3:1. If someone turns on more contrast in their system settings, text and edges get brighter again.</li>
+                <li><strong>Keyboard.</strong> Everything works without a mouse. Tab and Enter move through the steps, the arrow keys move the pad and change numbers, and Escape ends a session. One focus ring with a small gap is used for everything.</li>
+                <li><strong>Screen readers.</strong> A hidden status message says when a session starts, with its length, voice and how to end it, when the time is up, and when you're back at the setup. Moving to a new step puts focus on it so its name is read out (<a href="https://github.com/SoleyatRmit/Dilation/blob/fc09c77852b1a58a974743c1d27797770e98f606/main.js#L46-L55" target="_blank" rel="noopener">main.js, lines 46 to 55</a>).</li>
+                <li><strong>No hover-only information.</strong> Voice descriptions and hints are always on screen, and the hints are linked to their fields so screen readers read them too.</li>
+                <li><strong>Sound.</strong> A notice before you start says the page makes sound, every session fades in, and the volume is set before the sound begins.</li>
+                <li><strong>Motion.</strong> With reduced motion on, the waves stay still and the steps don't fade in.</li>
+            </ul>
+
+            <h3>Feedback</h3>
+            <ul>
+                <li><strong>On screen.</strong> Hovered options get a brighter edge, the selected option gets the accent edge and a lighter fill, and the pad lights up while you hold it.</li>
+                <li><strong>In sound.</strong> Picking a voice plays it, and holding the pad plays the tone, so choices are heard as soon as they're made.</li>
+                <li><strong>At the end.</strong> The bell and the glow mark the end for both ears and eyes, and the End button changes to "Ending" while the sound fades.</li>
+            </ul>
+
+            <h3>Browsers</h3>
+            <p>Dilation was tested in Firefox and Chrome at 800, 1024, 1366 and 1920px wide, checking every step at each width, with full sessions run with sound in both browsers. The number fields used to have custom arrows that only Chrome understood, so Firefox showed its own small grey ones. They're now real minus and plus buttons, drawn the same in both browsers.</p>
+            <div class="log">
+                <table>
+                    <caption>Browser differences and how Dilation handles them</caption>
+                    <thead>
+                        <tr><th scope="col">Feature</th><th scope="col">Firefox</th><th scope="col">Chrome</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Temporal</td><td>Built in since version 139</td><td>Built in since version 144, older versions use the polyfill</td></tr>
+                        <tr><td>Number field arrows</td><td>Own minus and plus buttons</td><td>Own minus and plus buttons</td></tr>
+                        <tr><td>Steps and Custom fields (<code>:target</code>, <code>:has()</code>)</td><td>Works</td><td>Works</td></tr>
+                        <tr><td>Sound starting</td><td>Starts on the first click</td><td>Starts on the first click</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Final version's commit log -->
+        <section id="commit-log">
+            <h2>Commit log</h2>
+            <p>The final version is the main branch of the <a href="https://github.com/SoleyatRmit/Dilation" target="_blank" rel="noopener">Dilation repository</a>. After peer testing, the Pad, One at a time and Bell prototypes were merged into main, so their commits are part of this log too.</p>
+            <details class="log">
+                <summary>Commit log (42 commits)</summary>
+                <table>
+                    <caption>Commit log, main branch</caption>
+                    <thead>
+                        <tr><th scope="col">Author</th><th scope="col">Date</th><th scope="col">Subject</th><th scope="col">Body</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>SoleyatRmit</td><td>Sun Oct 25 13:14:08 2026 +0700</td><td>Added screen reader</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Sun Oct 25 00:12:53 2026 +0700</td><td>Screen widths</td><td>Made four layouts for screen widths. The set up screen now scales with the screen widths (Medium, expanded, large and extra large).</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Sat Oct 24 20:36:53 2026 +0700</td><td>Made the number arrows work in Firefox</td><td>-webkit-inner-spin-button doesn&#x27;t work in Firefox so it&#x27;s been replaced with plus and minus buttons.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Sat Oct 24 20:03:45 2026 +0700</td><td>Replaced tooltips with hints</td><td>Peer testing showed that no one found out that hovering above anything will show tooltips so it&#x27;s been replaced with hints.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Sat Oct 24 13:44:59 2026 +0700</td><td>Improved readability</td><td>made text and edges easier to see, I used Claude and read WCAG website for this.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Sat Oct 24 13:15:39 2026 +0700</td><td>Update style.css</td><td>Design tokens. Make sure everything is clean and easier for others to read.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Fri Oct 23 00:30:03 2026 +0700</td><td>Color session screen</td><td>Added colors to session screen for different voices.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Sat Oct 10 07:41:14 2026 +0700</td><td>Added glow when bell rings</td><td>In testing only 4 out of 12 clearly notice the bell and countdown was voted as the clearest but felt worse because of the numbers. So I&#x27;m adding a visual cue (glow) to the bell instead of a countdown.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Sat Oct 10 05:07:31 2026 +0700</td><td>Quick start</td><td>one tester said the steps help you learn but they wouldn&#x27;t want to do it every time so I added a quick start option.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Fri Oct 9 21:51:40 2026 +0700</td><td>Remember settings</td><td>choices saved in browser</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Fri Oct 9 21:23:59 2026 +0700</td><td>Added voice preview</td><td>Many testers like the pad preview so I added preview to the voice too.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Fri Oct 9 20:14:26 2026 +0700</td><td>Showed voice descriptions</td><td>Two testers asked what each voice sounds like. They were hidden in hover tooltips but I guess that was hard to discover so I added description under each voice instead.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Fri Oct 9 16:36:38 2026 +0700</td><td>Added error message if the sound can&#x27;t start</td><td>Wait 3 seconds and if no sound then it goes back to set up screen with a message.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Fri Oct 9 12:10:51 2026 +0700</td><td>Merge branch &#x27;LayoutTwo&#x27;</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Fri Oct 9 12:09:15 2026 +0700</td><td>Merge branch &#x27;LayoutThree&#x27;</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Tue Sep 29 10:12:55 2026 +0700</td><td>Bell only rings when time runs out</td><td>The bell now only rings when the time naturally runs out. The bell won&#x27;t ring when the user manually ends the session anymore.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Tue Sep 29 09:09:37 2026 +0700</td><td>Gave the bell some reverb</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Tue Sep 29 09:01:21 2026 +0700</td><td>Bell tuning</td><td>Bell sound now also follow the tune settings.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Tue Sep 29 08:51:43 2026 +0700</td><td>Update main.js</td><td>The bell volume now scales with the volume slider.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Tue Sep 29 08:47:22 2026 +0700</td><td>Added a bell sound at the end of every session</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 20:41:33 2026 +0700</td><td>Added arrow keys support for the pad</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 20:17:02 2026 +0700</td><td>Labelled the pad</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 19:51:30 2026 +0700</td><td>Update main.js</td><td>Added feature where you can hear the preview while dragging on the pad. Claude helped a lot with this part.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 19:22:56 2026 +0700</td><td>Update main.js</td><td>Added brightness to the pad, so y level for brightness and x level for pitch.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 19:03:18 2026 +0700</td><td>Making the Pad functional</td><td>Making it draggable and continuing with the coding. Claude helped a lot with this.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 18:51:27 2026 +0700</td><td>Replaced tuning with a pad</td><td>Added a pad and removed the previous tuning buttons. Backend is not there yet so it&#x27;s not working.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 18:29:28 2026 +0700</td><td>Update index.html</td><td>Fixed a bug where pressing Enter would skipped all the other pages and starts the session. Claude found this bug and fixed it too.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 18:25:14 2026 +0700</td><td>Update style.css</td><td>Added fade animation to the steps too</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 18:20:57 2026 +0700</td><td>Page counter</td><td>Added page counter to see what page you&#x27;re on and how many are left.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 18:13:53 2026 +0700</td><td>Update style.css</td><td>Style the next and back buttons. Make it match with the rest of the website.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 17:51:33 2026 +0700</td><td>Update index.html</td><td>Move Begin button to the last step</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 17:49:26 2026 +0700</td><td>Show one setting at a time part 2</td><td>Continuing the coding and added next and back buttons.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 17:29:39 2026 +0700</td><td>Show one setting at a time</td><td>Make CSS show the settings in the address bar and if nothing is there then start at length (first step).</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:33:13 2026 +0700</td><td>Arrows spacing</td><td>Spaced out the up and down arrows so it fits with the rest of the website.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:29:13 2026 +0700</td><td>Update the style of the up and down arrow keys</td><td>Claude helped with the background line.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:15:10 2026 +0700</td><td>Added a favicon</td><td>Claude helped with this but I came up with the wave design.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:09:36 2026 +0700</td><td>Added Esc function to end the session</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 16:06:04 2026 +0700</td><td>Pitch lift at the end of session</td><td></td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:59:04 2026 +0700</td><td>Update style.css</td><td>Added hover animations on the set up page.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:49:43 2026 +0700</td><td>Fixed volume slider</td><td>Fix the slider and made it longer.</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 15:35:04 2026 +0700</td><td>Added a volume slider</td><td>Volume slider at the bottom of the set up page</td></tr>
+                        <tr><td>SoleyatRmit</td><td>Mon Sep 28 14:12:59 2026 +0700</td><td>Uploaded Prototype</td><td></td></tr>
+                    </tbody>
+                </table>
+                <p class="log-download"><a href="./assets/logs/Final.csv" download>Download this log as a CSV</a></p>
+            </details>
+        </section>
+
+        <section id="references">
+            <h2>References</h2>
+            <p>Ableton n.d., <cite>Learning Synths</cite>, viewed 12 August 2026, &lt;<a href="https://learningsynths.ableton.com/" target="_blank" rel="noopener">https://learningsynths.ableton.com/</a>&gt;.</p>
+            <p>Bryntum 2026, <cite>JavaScript Temporal in 2026: is it finally here?</cite>, Bryntum, viewed 25 October 2026, &lt;<a href="https://bryntum.com/blog/javascript-temporal-is-it-finally-here/" target="_blank" rel="noopener">https://bryntum.com/blog/javascript-temporal-is-it-finally-here/</a>&gt;.</p>
+            <p>Encyclopaedia Britannica 2026, <cite>Time dilation</cite>, Encyclopaedia Britannica, viewed 12 August 2026, &lt;<a href="https://www.britannica.com/science/time-dilation" target="_blank" rel="noopener">https://www.britannica.com/science/time-dilation</a>&gt;.</p>
+            <p>Mann, Y n.d., <cite>Tone.js</cite>, viewed 25 October 2026, &lt;<a href="https://tonejs.github.io/" target="_blank" rel="noopener">https://tonejs.github.io/</a>&gt;.</p>
+            <p>MDN 2026, <cite>Temporal</cite>, MDN Web Docs, Mozilla, viewed 25 October 2026, &lt;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal</a>&gt;.</p>
+            <p>W3C 2023, <cite>Web Content Accessibility Guidelines (WCAG) 2.2</cite>, World Wide Web Consortium, viewed 24 October 2026, &lt;<a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener">https://www.w3.org/TR/WCAG22/</a>&gt;.</p>
         </section>
     </main>
 
@@ -42,6 +423,8 @@
         <p>
             Page maintained by:
             <a href="https://github.com/SoleyatRmit" target="_blank" rel="noopener">Soley Chhour</a>
+            &middot;
+            <a href="./communityofpractice.html">Community of Practice</a>
         </p>
     </footer>
 
