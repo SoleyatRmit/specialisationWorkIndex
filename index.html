@@ -46,7 +46,7 @@
             <p class="note">Made for laptops and desktops, in Chrome or Firefox. It makes sound, so check your volume first.</p>
 
             <figure>
-                <img src="./assets/images/a3/setup-large.png" alt="The Dilation setup screen on a laptop. The title, a one line description and a volume notice sit on the left. On the right is the first step, Length 1 of 5, with buttons for 20 sec, 1 min, 5 min, 20 min and Custom, and a Next button." width="1366" height="768">
+                <img src="./assets/images/setup-large.png" alt="The Dilation setup screen on a laptop. The title, a one line description and a volume notice sit on the left. On the right is the first step, Length 1 of 5, with buttons for 20 sec, 1 min, 5 min, 20 min and Custom, and a Next button." width="1366" height="768">
                 <figcaption>The setup screen on a 1366px wide laptop, in Firefox.</figcaption>
             </figure>
 
@@ -113,7 +113,7 @@
 
             <h3>Setup in five steps</h3>
             <figure>
-                <img src="./assets/images/a3/step-length.png" alt="The Length step with Custom picked. Two number fields for minutes and seconds, each with a minus and plus button, a hint saying up to 120 minutes and at least 10 seconds, and a Next button." width="552" height="285">
+                <img src="./assets/images/step-length.png" alt="The Length step with Custom picked. Two number fields for minutes and seconds, each with a minus and plus button, a hint saying up to 120 minutes and at least 10 seconds, and a Next button." width="552" height="285">
                 <figcaption>Step 1 of 5, with a custom length.</figcaption>
             </figure>
             <p>The setup asks five questions, one at a time: length, voice, tone, fades and volume. Each step is its own section, and Next and Back are plain links to the next section's address, so CSS shows whichever step is in the address bar using <code>:target</code>. A counter shows which step you're on. Begin only appears on the last step, and pressing Enter can't skip ahead.</p>
@@ -121,7 +121,7 @@
 
             <h3>Voices you can hear before you pick</h3>
             <figure>
-                <img src="./assets/images/a3/step-voice.png" alt="The Voice step. Three buttons: Glass, soft like a singing bowl; Wood, warm like a flute; Air, rich like an organ. Glass is selected." width="552" height="236">
+                <img src="./assets/images/step-voice.png" alt="The Voice step. Three buttons: Glass, soft like a singing bowl; Wood, warm like a flute; Air, rich like an organ. Glass is selected." width="552" height="236">
                 <figcaption>Step 2 of 5. Each voice has a short description under its name.</figcaption>
             </figure>
             <p>There are three voices, Glass, Wood and Air. Each one is a different waveform, so they sound clearly different at the same pitch. Picking a voice plays a short sample of it for about a second and a half, at your tone settings. Picking another one fades the first out so they don't pile up (<a href="https://github.com/SoleyatRmit/Dilation/blob/fc09c77852b1a58a974743c1d27797770e98f606/main.js#L166-L203" target="_blank" rel="noopener">main.js, lines 166 to 203</a>).</p>
@@ -129,7 +129,7 @@
 
             <h3>The tone pad</h3>
             <figure>
-                <img src="./assets/images/a3/step-tone.png" alt="The Tone step. A wide dark box labelled Bright at the top and Dark at the bottom, with Low pitch and High pitch underneath. A filled dot sits near the top left while it's being dragged." width="552" height="345">
+                <img src="./assets/images/step-tone.png" alt="The Tone step. A wide dark box labelled Bright at the top and Dark at the bottom, with Low pitch and High pitch underneath. A filled dot sits near the top left while it's being dragged." width="552" height="345">
                 <figcaption>Step 3 of 5, while the pad is being dragged.</figcaption>
             </figure>
             <p>The pad sets two things at once. Left to right is pitch, from 65 to 165 Hz, and top to bottom is brightness, which opens or closes a filter on the sound. While you hold the pad you hear a quiet preview that follows the dot, so you hear the session before it starts. The arrow keys move the dot too, with the same preview (<a href="https://github.com/SoleyatRmit/Dilation/blob/fc09c77852b1a58a974743c1d27797770e98f606/main.js#L62-L71" target="_blank" rel="noopener">main.js, lines 62 to 71</a>).</p>
@@ -138,11 +138,11 @@
             <h3>Fades and volume</h3>
             <div class="pair">
                 <figure>
-                    <img src="./assets/images/a3/step-fades.png" alt="The Fades step. Fade in is 4 seconds and fade out is 5 seconds, each with minus and plus buttons, and a hint underneath." width="552" height="214">
+                    <img src="./assets/images/step-fades.png" alt="The Fades step. Fade in is 4 seconds and fade out is 5 seconds, each with minus and plus buttons, and a hint underneath." width="552" height="214">
                     <figcaption>Step 4 of 5.</figcaption>
                 </figure>
                 <figure>
-                    <img src="./assets/images/a3/step-volume.png" alt="The Volume step. A slider from Quiet to Loud, a Back button and a wide Begin button." width="552" height="215">
+                    <img src="./assets/images/step-volume.png" alt="The Volume step. A slider from Quiet to Loud, a Back button and a wide Begin button." width="552" height="215">
                     <figcaption>Step 5 of 5.</figcaption>
                 </figure>
             </div>
@@ -151,7 +151,7 @@
 
             <h3>Quick start</h3>
             <figure>
-                <img src="./assets/images/a3/step-quick-start.png" alt="The Length step for a returning user. Under the usual buttons is a divider and a button saying Start with last time's settings, with the summary 20 sec, Air voice." width="552" height="300">
+                <img src="./assets/images/step-quick-start.png" alt="The Length step for a returning user. Under the usual buttons is a divider and a button saying Start with last time's settings, with the summary 20 sec, Air voice." width="552" height="300">
                 <figcaption>The first step after you've done a session before.</figcaption>
             </figure>
             <p>Your choices are saved in the browser when a session starts, and put back next time, including the dot on the pad. Once there's a saved session, the first step shows a button to start straight away with last time's settings, with a summary under it. Nothing leaves your browser, and there's no account (<a href="https://github.com/SoleyatRmit/Dilation/blob/fc09c77852b1a58a974743c1d27797770e98f606/main.js#L129-L164" target="_blank" rel="noopener">main.js, lines 129 to 164</a>).</p>
@@ -160,15 +160,15 @@
             <h3>The session</h3>
             <div class="trio">
                 <figure>
-                    <img src="./assets/images/a3/session-glass.jpg" alt="The session screen with the Glass voice. Four thin waves across a dark screen with a soft blue wash, and an End session button at the bottom." width="1366" height="768">
+                    <img src="./assets/images/session-glass.jpg" alt="The session screen with the Glass voice. Four thin waves across a dark screen with a soft blue wash, and an End session button at the bottom." width="1366" height="768">
                     <figcaption>Glass</figcaption>
                 </figure>
                 <figure>
-                    <img src="./assets/images/a3/session-wood.jpg" alt="The session screen with the Wood voice, with a soft amber wash behind the waves." width="1366" height="768">
+                    <img src="./assets/images/session-wood.jpg" alt="The session screen with the Wood voice, with a soft amber wash behind the waves." width="1366" height="768">
                     <figcaption>Wood</figcaption>
                 </figure>
                 <figure>
-                    <img src="./assets/images/a3/session-air.jpg" alt="The session screen with the Air voice, with a soft violet wash behind the waves." width="1366" height="768">
+                    <img src="./assets/images/session-air.jpg" alt="The session screen with the Air voice, with a soft violet wash behind the waves." width="1366" height="768">
                     <figcaption>Air</figcaption>
                 </figure>
             </div>
@@ -178,7 +178,7 @@
 
             <h3>The ending</h3>
             <figure>
-                <img src="./assets/images/a3/session-bell.jpg" alt="The session screen at the moment the bell rings. A large warm glow fills the middle of the screen behind the waves." width="1366" height="768">
+                <img src="./assets/images/session-bell.jpg" alt="The session screen at the moment the bell rings. A large warm glow fills the middle of the screen behind the waves." width="1366" height="768">
                 <figcaption>The glow when the bell rings.</figcaption>
             </figure>
             <p>When the time runs out, a soft bell rings two octaves above the drone, so it's in tune with whatever pitch you picked. At the same time a warm glow blooms in the middle of the screen and fades over four seconds, while the sound and the screen fade out together. When the fade finishes you're back at the setup. Ending early with End or Escape fades out without the bell, so the bell always means the time is up (<a href="https://github.com/SoleyatRmit/Dilation/blob/fc09c77852b1a58a974743c1d27797770e98f606/main.js#L291-L308" target="_blank" rel="noopener">main.js, lines 291 to 308</a>).</p>
@@ -292,26 +292,26 @@ if (Temporal.Duration.compare(totalDuration, shortest) &lt; 0) {
             </div>
             <div class="pair">
                 <figure>
-                    <img src="./assets/images/a3/width-800.png" alt="The Tone step at 800px wide. One centred column with the title and notice above the pad." width="800" height="700">
+                    <img src="./assets/images/width-800.png" alt="The Tone step at 800px wide. One centred column with the title and notice above the pad." width="800" height="700">
                     <figcaption>Medium, 800px</figcaption>
                 </figure>
                 <figure>
-                    <img src="./assets/images/a3/width-1024.png" alt="The Tone step at 1024px wide. One wider column with a taller pad." width="1024" height="768">
+                    <img src="./assets/images/width-1024.png" alt="The Tone step at 1024px wide. One wider column with a taller pad." width="1024" height="768">
                     <figcaption>Expanded, 1024px</figcaption>
                 </figure>
                 <figure>
-                    <img src="./assets/images/a3/width-1366.png" alt="The Tone step at 1366px wide. The title and notice sit on the left and the pad on the right." width="1366" height="768">
+                    <img src="./assets/images/width-1366.png" alt="The Tone step at 1366px wide. The title and notice sit on the left and the pad on the right." width="1366" height="768">
                     <figcaption>Large, 1366px</figcaption>
                 </figure>
                 <figure>
-                    <img src="./assets/images/a3/width-1920.png" alt="The Tone step at 1920px wide. The same two columns, larger, with a taller pad." width="1920" height="1080">
+                    <img src="./assets/images/width-1920.png" alt="The Tone step at 1920px wide. The same two columns, larger, with a taller pad." width="1920" height="1080">
                     <figcaption>Extra-large, 1920px</figcaption>
                 </figure>
             </div>
 
             <h3>Accessibility</h3>
             <figure>
-                <img src="./assets/images/a3/focus-ring.png" alt="The Volume step with the Back button focused from the keyboard. A light ring sits just outside the button's edge." width="552" height="215">
+                <img src="./assets/images/focus-ring.png" alt="The Volume step with the Back button focused from the keyboard. A light ring sits just outside the button's edge." width="552" height="215">
                 <figcaption>The focus ring, shown when you move around with the keyboard.</figcaption>
             </figure>
             <ul>
